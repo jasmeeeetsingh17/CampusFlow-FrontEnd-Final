@@ -73,6 +73,16 @@ function App() {
                   },
                 },
                 {
+                  name: "classes",
+                  list: "/classes",
+                  create: "/classes/create",
+                  show: "/classes/show/:id",
+                  meta: {
+                    label: "Classes",
+                    icon: <GraduationCap />,
+                  },
+                },
+                {
                   name: "subjects",
                   list: "/subjects",
                   create: "/subjects/create",
@@ -110,16 +120,7 @@ function App() {
                     icon: <ClipboardCheck />,
                   },
                 },
-                {
-                  name: "classes",
-                  list: "/classes",
-                  create: "/classes/create",
-                  show: "/classes/show/:id",
-                  meta: {
-                    label: "Classes",
-                    icon: <GraduationCap />,
-                  },
-                },
+
               ]}
             >
               <Routes>
@@ -145,6 +146,12 @@ function App() {
                 >
                   <Route path="/" element={<Dashboard />} />
 
+                  <Route path="classes">
+                    <Route index element={<ClassesList />} />
+                    <Route path="create" element={<ClassesCreate />} />
+                    <Route path="show/:id" element={<ClassesShow />} />
+                  </Route>
+
                   <Route path="subjects">
                     <Route index element={<SubjectsList />} />
                     <Route path="create" element={<SubjectsCreate />} />
@@ -168,11 +175,7 @@ function App() {
                     <Route path="confirm" element={<EnrollmentConfirm />} />
                   </Route>
 
-                  <Route path="classes">
-                    <Route index element={<ClassesList />} />
-                    <Route path="create" element={<ClassesCreate />} />
-                    <Route path="show/:id" element={<ClassesShow />} />
-                  </Route>
+
                 </Route>
               </Routes>
 

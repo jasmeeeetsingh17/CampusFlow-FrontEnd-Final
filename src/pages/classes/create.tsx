@@ -122,16 +122,16 @@ const ClassesCreate = () => {
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel>
-                        Banner Image <span className="text-orange-600">*</span>
+                        Banner Image
                       </FormLabel>
                       <FormControl>
                         <UploadWidget
                           value={
                             field.value
                               ? {
-                                  url: field.value,
-                                  publicId: bannerPublicId ?? "",
-                                }
+                                url: field.value,
+                                publicId: bannerPublicId ?? "",
+                              }
                               : null
                           }
                           onChange={(file) => {

@@ -158,12 +158,12 @@ const Dashboard = () => {
       icon: GraduationCap,
       accent: "text-emerald-600",
     },
-    {
-      label: "Admins",
-      value: users.filter((user) => user.role === "admin").length,
-      icon: ShieldCheck,
-      accent: "text-amber-600",
-    },
+    // {
+    //   label: "Admins",
+    //   value: users.filter((user) => user.role === "admin").length,
+    //   icon: ShieldCheck,
+    //   accent: "text-amber-600",
+    // },
     {
       label: "Subjects",
       value: subjects.length,
@@ -198,7 +198,7 @@ const Dashboard = () => {
           <CardTitle>Overview</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
             {kpis.map((kpi) => (
               <div
                 key={kpi.label}

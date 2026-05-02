@@ -108,8 +108,8 @@ const ClassesShow = () => {
           {query.isLoading
             ? "Loading class details..."
             : query.isError
-            ? "Failed to load class details."
-            : "Class details not found."}
+              ? "Failed to load class details."
+              : "Class details not found."}
         </p>
       </ShowView>
     );
@@ -134,7 +134,7 @@ const ClassesShow = () => {
       <div className="banner">
         {classDetails.bannerUrl ? (
           classDetails.bannerUrl.includes("res.cloudinary.com") &&
-          classDetails.bannerCldPubId ? (
+            classDetails.bannerCldPubId ? (
             <AdvancedImage
               cldImg={bannerPhoto(
                 classDetails.bannerCldPubId ?? "",
@@ -218,23 +218,10 @@ const ClassesShow = () => {
           </div>
         </div>
 
-        <Separator />
-
-        {/* Join Class Section */}
-        <div className="join">
-          <h2>🎓 Join Class</h2>
-
-          <ol>
-            <li>Ask your teacher for the invite code.</li>
-            <li>Click on &quot;Join Class&quot; button.</li>
-            <li>Paste the code and click &quot;Join&quot;</li>
-          </ol>
-        </div>
-
-        <Button size="lg" className="w-full">
-          Join Class
-        </Button>
       </Card>
+
+      <Separator />
+
 
       <Card className="hover:shadow-md transition-shadow">
         <CardHeader className="flex flex-row items-center justify-between">
@@ -252,9 +239,8 @@ const getInitials = (name = "") => {
   const parts = name.trim().split(" ").filter(Boolean);
   if (parts.length === 0) return "";
   if (parts.length === 1) return parts[0][0]?.toUpperCase() ?? "";
-  return `${parts[0][0] ?? ""}${
-    parts[parts.length - 1][0] ?? ""
-  }`.toUpperCase();
+  return `${parts[0][0] ?? ""}${parts[parts.length - 1][0] ?? ""
+    }`.toUpperCase();
 };
 
 export default ClassesShow;
